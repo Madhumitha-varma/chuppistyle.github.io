@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>Техноэкспо</title>
+    <link rel="stylesheet" href="css/plugins/bootstrap.css">
+    <link rel='stylesheet' href='css/style.css'/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babylonjs/2.5.0/babylon.max.js"></script>
+    <script src="js/pep.min.js"></script>
+    <script src="demo.js"></script>
+
+
+</head>
+<body>
+<div class="wrap" id="totalScreen">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"><a href="#main">
+                    <img src="img/header/logo.png" alt="logo">
+                </a>
+                </div>
+                <div class="col-lg-2 header-location">
+                    <img src="img/header/location.png" alt="location">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Санкт-Петербург
+                            <span><img
+                                    src="img/header/arrow_down.svg" alt=""></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Москва</a></li>
+                            <li><a href="#">Краснодар</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 header-phone_number">
+                    <p><a href="#">8 (800) 500-84-27</a></p>
+                    <span>*Бесплатный звонок по РФ</span>
+                </div>
+                <div class="col-lg-2 header-call_me"><a href="#"><img src="img/header/call-me.svg" alt="call-me"></a>
+                </div>
+                <div class="col-lg-4 header-search">
+                    <form action="#">
+                        <input type="text" name="search" id="search" placeholder="Поиск...">
+                    </form>
+                </div>
+            </div>
+
+            <ul class="nav nav-tabs nav-tabs-justified">
+                <li><a data-toggle="tab" href="#catalog">Каталог электростанций</a></li>
+                <li><a data-toggle="tab" href="#production">Наше производство</a></li>
+                <li><a data-toggle="tab" href="#equipment">Энергетическое оборудование</a></li>
+                <li><a data-toggle="tab" href="#services">Услуги</a></li>
+                <li><a data-toggle="tab" href="#company">О компании</a></li>
+                <li><a data-toggle="tab" href="#information">Информация</a></li>
+                <li><a data-toggle="tab" href="#solutions">Решения</a></li>
+                <li><a data-toggle="tab" href="#contact">Контакты</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <section id="engine">
+        <div id="main">
+            <div class="container">
+                <p class="main-slogan">
+                    <span>Мы всегда на шаг впереди</span>
+                </p>
+                <div class="row">
+                    <div class="col-lg-2 main-scene view">
+                        <form action="#">
+                            <div>
+                                <input type="radio" name="all" id="all" value="all" checked>
+                                <label for="all">Целый</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="all" id="shema" value="schema">
+                                <label for="shema">Схема</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="all" id="dots" value="dots">
+                                <label for="dots"> Точки</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="all" id="animation">
+                                <label for="animation">Анимация</label>
+                            </div>
+                        </form>
+                        <button>
+                            <span>Перейти в каталог</span>
+                        </button>
+                    </div>
+                    <div class="main-sidebar_menu__right">
+                        <ul>
+                            <li><a href="#" data-value="Главная"><span class="menu-text-left">Главная</span><img
+                                    src="img/main/a-menu-icon.png" alt="menu icon"></a></li>
+                            <li><a href="#" data-value="1Главная"><span class="menu-text-left">Главная1</span><img
+                                    src="img/main/a-menu-icon.png" alt="menu icon"></a></li>
+                            <li><a href="#" data-value="2Главная"><span class="menu-text-left">Главная2</span><img
+                                    src="img/main/a-menu-icon.png" alt="menu icon"></a></li>
+                            <li><a href="#" data-value="3Главная"><span class="menu-text-left">Главная3</span><img
+                                    src="img/main/a-menu-icon.png" alt="menu icon"></a></li>
+                            <li><a href="#" data-value="4Главная"><span class="menu-text-left">Главная4</span><img
+                                    src="img/main/a-menu-icon.png" alt="menu icon"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <canvas id="renderCanvas" touch-action="none" MouseLeftButtonDown="renderCanvas_MouseLeftButtonDowncanvas">
+                <div id="fps"></div>
+                <div id="notSupported" class="hidden">Sorry but your browser does not support WebGL...</div>
+
+                </canvas>
+    </section>
+    <section id="nav" class="off">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 z-index-5">
+                <div class="tab-content">
+                    <div id="catalog" class="tab-pane fade in active">
+                        <ul>
+                            <li><a href="#">Дизельные генераторы <i>(от <span>10</span> до <span>3 500</span> квт)</i></a></li>
+                            <li><a href="#">Портативные генераторы <i>(дизель/ бензин/ газ)</i></a></li>
+                            <li><a href="#">ЯМЗ, ММЗ, ТМЗ <i>(импортозамещение)</i></a></li>
+                            <li><a href="#">Газопоршневые электростанции <i>(мини <span>ТЭЦ</span>)</i></a></li>
+                            <li><a href="#">Сварочные генераторы</a></li>
+                            <li><a href="#">С наработкой <i>(trade-in, на комиссию, б/у)</i></a></li>
+                            <li><a href="#">У ВАС ТЕНДЕР ?<i><span>(44-ФЗ</span> и <span>X223-ФЗ)</span></i></a></li>
+                            <li><a href="#">Склад и прайс-лист</a></li>
+                            <li><a href="#">Спецпредложения</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div id="production" class="tab-pane fade">
+                        <h3>Menu 1</h3>
+                        <p>Some content in menu 1.</p>
+                    </div>
+                    <div id="equipment" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>
+                    <div id="services" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>
+                    <div id="company" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>
+                    <div id="information" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>
+                    <div id="solutions" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>
+                    <div id="contact" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-6 z-index-5">
+                    <div class="absolute-slogan">
+                        <p>Мы знаем толк в своем деле</p>
+                    </div>
+                    <button class="close-nav"><img src="img/nav/close.png" alt="close"></button>
+                </div>
+            </div>
+        </div>
+        <div class="animate-full-with">
+        <ul class="animate">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        </div>
+    </section>
+
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
